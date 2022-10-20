@@ -31,93 +31,92 @@ h1 {letter-spacing: 6px}
 </header>
 
 <!-- !BODY CONTENT! -->
-<div class="w3-container" id="menu">
-  <div class="w3-content" style="max-width:700px">
- 
+
+<!-- Assignment #1 -->
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</span></h5>
-
-
-    <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, '');" id="myLink">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, '');">
-        <div class="w3-col s6 tablink"></div>
-      </a>
+<body>
+    <div class="container">
+        <div class="hed">Celsius to Fahrenheit and Fahrenheit to Celsius Converter</div>
+        </div>
+        <div class="boxcontainer">
+            <div class="box1">
+                <p>Input the Temperature:</p>
+                <input type="number" class="takval" />
+            </div>
+            <div class="box1">
+                <p>Type of temperature</p>
+                <select name="" id="unit">   
+                     <option value="Fahrenheit">Fahrenheit</option>
+                     <option value="Celsius">Celsius</option>  
+                </select>
+            </div>
+        </div>
+        <div class="valuecontainer">
+            <p>Result</p>
+            <div class="value"></div>
+        </div>
+        <button onclick="temprature()" class="button">Convert</button>
     </div>
+</body>
+<script>
+    var emoji = document.querySelector("#icon");
+    var par = document.querySelector("#par");
+    let temprature = () => {
+        let opt = document.querySelector("#unit");
+        let display = document.querySelector(".value");
+        var a = document.querySelector(".takval").value;
+        if (opt.value == "Celsius") {
+            console.log(a, "C to F", opt.value)
+            let F = a * (9 / 5) + 32
+            display.innerHTML = F.toFixed(4) + " F"
+            if (F < 32) {
+                emoji.style = "color:blue"
+                emoji.className = "fa-solid fa-face-grimace"
+                par.innerHTML = "Cool at frezing point"
+            } else if (F > 122) {
+                emoji.style = "color:red"
+                emoji.className = "fa-solid fa-face-dizzy"
+                par.innerHTML = "So Warm"
+            } else {
+                emoji.className = "fa-solid fa-face-grin"
+                par.innerHTML = ""
+                emoji.style = "color:rgb(253, 174, 37)"
+            }
 
-    <div id="" class="w3-container menu w3-padding-48 w3-card">
-      <h5> Celcius to Fahrenheight Converter (Not yet finished pa po, sir. Still working on the converter pa po.)</h5>
-      <main>
+        } else {
+            console.log(a, "F to C", opt.value)
+            let C = (a - 32) * (5 / 9)
+            display.innerHTML = C.toFixed(4) + " ºC"
+            if (C < 0) {
+                emoji.style = "color:blue"
+                emoji.className = "fa-solid fa-face-grimace"
+                par.innerHTML = "Cool at frezing point"
+            } else if (C > 50) {
+                emoji.style = "color:red"
+                emoji.className = "fa-solid fa-face-dizzy"
+                par.innerHTML = "So Warm"
+            } else {
+                emoji.className = "fa-solid fa-face-grin"
+                par.innerHTML = ""
+                emoji.style = "color:rgb(253, 174, 37)"
+            }
+        }
+    }
+</script>
 
-        <section class="inputs">
-            <input type="number" name="celcius" id="celcius" class="input" placeholder="Celcius">
-            <input type="number" name="fahrenheit" id="fahrenheit" class="input" placeholder="Fahrenheit">
-            <input type="number" name="Result" id="Result" class="input" placeholder="Result">
-        </section>
-    </main>
-    <script src="script.js"></script>
-    </div>  
-    
+</body>
 
+<!-- Assignment #2 -->
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Assignment #2 - Income Tax Calculator</span></h5>
-
-    <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, '');" id="myLink">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, '');">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-    </div>
-
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
       <h5>Still making</h5>
       
-
+<!-- Assignment #3 -->
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</span></h5>
-
-    <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, '');" id="myLink">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, '');">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-    </div>
-
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
       <h5>Still making</h5>
 
     
-
+<!-- Assignment #4 -->
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Assignment #4 - Simple Payroll</span></h5>
-
-
-    <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, '');" id="myLink">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, '');">
-        <div class="w3-col s6 tablink"></div>
-      </a>
-    </div>
-
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-    
-
-
-    </style>
-  
-
-
-
-    </style>
-
-	<div class="container">
-
-<body>
-
 <h3> Simple Payroll</h3>
 <br/>Employee's Name:
 
