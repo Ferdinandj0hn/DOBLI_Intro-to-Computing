@@ -119,71 +119,68 @@ and is wrapped around the whole page content, except for the footer in this exam
           <h3>Assignmnt #2</h3>
           <h5>Income Tax Calculator <span class="w3-opacity"></span></h5>
         </div>
-  </div>
-</div>
-
-    <div class="card">
-      <h3>Calculate your Income Tax</h3>
-     
-    <label>Enter Taxable Income:</label>
-<input type="text" id="income" />
-<input type="button" value="Calculate" name="calculate" id="calculate" /><br><br>
-
-<label>Income Tax Owed:</label>
-<input type="text" id="tax"><br>
-
-</main>
-</body>
-</html>
-<script type=text/javascript>
-var $ = function (id) {
-return document.getElementById(id);
-};
-
-
-var processEntry = function() {
-var total;
-var income = parseFloat( $("income").value );
-
-
-$("tax").value = calcTaxes(income);
-
-
-
-function calcTaxes(income){
-var calculate = 0;
-if (income <= 0){
-alert ("Please enter a valid number greater than zero.")};
-if (income > 0 && income <= 9275){
-tax = (income * 0.10);
-}else if (income <= 37650 && income > 9275) {
-tax = (income - 9275) * 0.15 + 927.50;
-}else if (income <= 91150 && income > 37650) {
-tax = (income - 37650) * 0.25 + 5183.75;
-}else if (income <= 190150&& income > 91150) {
-tax = (income - 91150) * 0.28 + 18558.75 ;
-}else if (income <= 413350 && income > 190150) {
-tax = (income - 190150) * 0.33 + 46278.75 ;
-}else if (income <= 415050 && income > 413350) {
-tax = (income - 413350) * 0.35 + 119934.75 ;
-}else if (income > 415050) {
-tax = (income - 415050) * 0.396 + 120529.75 ;
-}
-
-tax = tax.toFixed(2);
-
-return tax;
-
-}
-}
+  <body>
+    
+<h1><i>Income Tax Calculator Program</i></h1>
+<h3>Rates</h3>
+<fieldset>
+<p>Not Over P250,000 = 0 </p>
+</fieldset>
+<fieldset>
+<p> Over P250,000 But Not Over P400,000 = 20% of the excess over P250,000</p>
+</fieldset>
+<fieldset>
+    <p> Over P400,000 But Not Over P800,000 = P30,000 + 25% of the excess over P400,000</p>
+</fieldset>
+<fieldset>
+    <p> Over P800,000 But Not Over P2,000,000 = P130,000 + 30% of the excess over P800,000</p>
+</fieldset>
+<fieldset>
+    <p> Over P2,000,000 But Not Over P8,000,000 = 	P490,000 + 32% of the excess over P2,000,000</p>
+</fieldset>
+<fieldset>
+    <p> Over P8,000,000 = P2,410,000 + 35% of the excess over P8,000,000</p>
+</fieldset>
+<br>
+<form>
+   Taxable income <input type="text" id="num1">
+ <button type="button" onclick="printsum()">Calculate</button>
+ 
+ <button type="reset">Reset</button>
+<p id="number"></p>
 
 
-window.onload = function () {
-
-$("calculate").onclick = processEntry;
-
-};
+<script>
+    function printsum()
+    {
+        var number1=parseInt(document.getElementById("num1").value);
+        
+        if(number1<250000){
+            document.getElementById("number").innerHTML=0;
+        }
+        if(number1>250000 && number1<=400000){
+            document.getElementById("number").innerHTML=(number1 - 250000) * .20 ;
+        }
+        if(number1>400000 && number1<=800000){
+            document.getElementById("number").innerHTML=(number1 - 400000) * .25 + 30000 ;
+        }
+        if(number1>800000 && number1<=2000000){
+            document.getElementById("number").innerHTML=(number1 - 800000) * .30 + 130000 ;
+        }
+        if(number1>2000000 && number1<=8000000){
+            document.getElementById("number").innerHTML=(number1 - 2000000) * .32 + 490000 ;
+        }
+        if(number1>8000000){
+            document.getElementById("number").innerHTML=(number1 - 8000000) * .35 + 2410000 ;
+        }
+    }
 </script>
+</form>
+
+
+
+
+</body>
       <!-- Assignment 3 -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
