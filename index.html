@@ -143,7 +143,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 </fieldset>
 <br>
 <form>
-   Taxable income <input type="text" id="num1">
+   Taxable income: <input type="text" id="num1">
  <button type="button" onclick="printsum()">Calculate</button>
  
  <button type="reset">Reset</button>
@@ -185,20 +185,51 @@ and is wrapped around the whole page content, except for the footer in this exam
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
           <h3>Assignment #3</h3>
-          <h5> Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers <span class="w3-opacity"></span></h5>
-        </div>
+         <h1>N Factorial</h1>
 
-    <h1> Sum of First N Numbers (This is automatically inputs once the website has been opened) </h1>
-    <body>
-      <script type=text/javascript>
-      var sum=0,n;
-      n=parseInt(prompt("Assignment 3 - Sum of First N Numbers-Enter a number:"));
-      while(n>=1)
-      {
-        sum=sum+n;
-        n=n-1;
-      }
-      alert("Sum of number is: "+sum);
+Enter a number: <input id="num">
+<br><br>
+<button onclick="fact()"> Factorial </button>
+<button onclick="sumfact()"> Sum </button>
+<button onclick="averagesum()"> Average Sum </button>
+<p id="res"></p>
+
+<script>
+    function fact(){
+        var i, num, f;
+
+    f = 1;
+
+    num = document.getElementById("num").value;
+
+    for(i = 1; i <= num; i++){
+    f = f * i;
+    }
+    i = i - 1;
+    document.getElementById("res").innerHTML = "The factorial is: " + f;
+    }
+</script>
+
+<script>
+    function sumfact()
+{
+     var z,n;
+    b = document.getElementById("num").value;
+    n = document.getElementById("num").value;
+    z = "";
+do {  
+        ++b
+        z = (n*b)/2;   
+        
+        
+    }
+while(n > z)
+   
+    document.getElementById("res").innerHTML='The sum is: '+z;
+    document.getElementById("num").value=n;
+}
+</script>
+      
       </script>
   <!-- Assignment 4 -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
